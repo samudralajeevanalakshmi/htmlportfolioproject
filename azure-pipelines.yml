@@ -17,3 +17,11 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial(1)(75833e6d-01d8-41cd-ac3a-cf5eb027f7f7)'
+    appType: 'webAppLinux'
+    appName: 'portofolio'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'NODE|10.12'
